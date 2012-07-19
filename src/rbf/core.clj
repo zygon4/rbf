@@ -79,11 +79,6 @@
 	r (result-matrix results);; result matrix
 	w (calc-weights d r)     ;; weight matrix
 	]
-    (comment
-      (println d)
-      (println k)
-      (println r)
-      (println w))
     (fn [point]
       ;;; need to multiply (distances between the new point and
       ;;; all the samples) * sample weights
@@ -114,14 +109,17 @@
        [x total-error]))
    (range train-sample-min train-sample-max)))
 
+;;; A parameter set for the work function
 (def params [[25 50 500]
 	     [25 100 500]
 	     [25 200 500]])
 
+;;; This just takes a vector of triples and runs the RBF over them, plotting the results
+;;; the axis labling doesn't seem to work right now... boo
 (defn work [params]
   (doseq [[train-min train-max test-count] (lazy-seq params)]
     (time
      (let [err-data (sine-err-data train-min train-max test-count)
 	   x-data (map first err-data)
 	   y-data (map last err-data)]
-       (view (xy-plot x-data y-data))))))
+       (view (xy-plot x-data y-data :x-label "training samples" :y-label "error sum"))))))
