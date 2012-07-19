@@ -5,3 +5,8 @@ Using Radial Basis Function for some simple learning. See http://en.wikipedia.or
 
 
 Copyright (C) 2012 David Charubini, 2012. All rights reserved.  Distributed under the Eclipse Public License.
+
+
+Dependencies:
+
+This project uses leiningen.  It depends on Incanter.
