@@ -10,3 +10,11 @@ Copyright (C) 2012 David Charubini, 2012. All rights reserved.  Distributed unde
 Dependencies:
 
 This project uses leiningen.  It depends on Incanter.
+
+
+
+
+Note that the results have horrible, horrible axis labels.  This is due to some Incanter issue.  The plots 
+are essentially the error rate as more training samples are provided.  Some plots have scattered training
+data making the squirrelly error curves and some have evenly spaced training data making smooth, sexy error
+curves.
